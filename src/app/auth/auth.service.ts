@@ -8,10 +8,12 @@ import { Observable, of } from 'rxjs';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<any> {
-    const url = '';
-    return this.http.post(url, { username, password });
+  login(loginCred: object): Observable<any> {
+    const url = 'http://52.90.134.17:8081/api/login';
+    return this.http.post(url, loginCred);
   }
 
-  logout(): void {}
+  logout(): void {
+    localStorage.clear();
+  }
 }

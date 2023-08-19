@@ -2,32 +2,53 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { TranslationService } from 'src/app/shared/services/translation.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  loginForm!: FormGroup;
+  isValidationError: boolean = false;
 
-  username: string = '';
-  password: string = '';
-  errorMessage: string = '';
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private translate: TranslationService,
+    private formBuilder: FormBuilder,
+    private alertService: AlertService
+  ) {}
 
-  constructor(private authService: AuthService, private router: Router,  private translate: TranslationService) {}
-  
-  login(): void {
-    this.errorMessage = ''; // Clear any previous error message
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      loginId: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
 
-    if (this.username && this.password) {
-      this.authService.login(this.username, this.password).subscribe(
-        () => {
-          this.router.navigate(['/dashboard']); // Redirect on successful login
+  onSubmit(): void {
+    this.isValidationError = false;
+    if (this.loginForm.valid) {
+      this.authService.login(this.loginForm.value).subscribe(
+        (res) => {
+          if (res.StatusText === 'SUCCESS') {
+            localStorage.setItem('currentUser', JSON.stringify(res));
+            this.router.navigate([
+              '/dashboard',
+            ]); /**Redirect on successful login */
+          } else {
+            this.alertService.openSnackBarError(res.StatusText);
+          }
         },
-        error => {
-          this.errorMessage = 'Invalid username or password'; // Display error message
+        (err: any) => {
+          this.alertService.openSnackBarError(err.error.error);
         }
       );
+    } else {
+      this.isValidationError = true;
     }
   }
 }

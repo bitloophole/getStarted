@@ -1,0 +1,13 @@
+{
+    "LOGIN": {
+        "LOGIN_TITLE": "Välkommen till världens första kognitiva plattform",
+        "LOGIN_LABEL": "Logga in",
+        "USERNAME_LABEL": "Användarnamn",
+        "PASSWORD_LABEL": "Lösenord",
+        "ERROR_USERNAME": "Vänligen ange användarnamn",
+        "ERROR_PASSWORD": "Vänligen ange lösenord",
+        "SESSION_EXPIRED": "Sessionen löpte! Logga in igen",
+        "SERVER_ERROR": "Det går inte att ansluta till API-tjänsten",
+        "VALIDATION_MSG":"Vänligen ange ett giltigt användarnamn eller lösenord"
+    }
+}

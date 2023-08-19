@@ -8,8 +8,16 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { SquarePipe } from './shared/pipes/square.pipe';
 import { PowerPipe } from './shared/pipes/power.pipe';
-import { TranslateModule, TranslateStore } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import { LocalizationModule } from './shared/Modules/localization/localization.module';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MaterialModule } from './shared/Modules/material/material.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 
 @NgModule({
@@ -27,7 +35,16 @@ import { LocalizationModule } from './shared/Modules/localization/localization.m
     FormsModule,
     ReactiveFormsModule,
     LocalizationModule,
-    TranslateModule.forRoot({})
+    MaterialModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      isolate: false
+    }),
+    NoopAnimationsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, TranslateStore],
   bootstrap: [AppComponent]
