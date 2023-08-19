@@ -1,0 +1,13 @@
+{
+    "LOGIN": {
+        "LOGIN_TITLE": "World's No 1 Cognitive Platform",
+        "LOGIN_LABEL": "Login",
+        "USERNAME_LABEL": "Username",
+        "PASSWORD_LABEL": "Password",
+        "ERROR_USERNAME": "Plese enter username",
+        "ERROR_PASSWORD": "Plese enter password",
+        "SESSION_EXPIRED": "Session expired! Please sign in again",
+        "SERVER_ERROR": "Unable to connect to API service",
+        "VALIDATION_MSG":"Please enter a valid username or password"
+    }
+}
