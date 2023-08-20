@@ -10,7 +10,7 @@
           />
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
             <!-- User name input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="userName">{{
@@ -23,6 +23,15 @@
                 placeholder="Enter User Name"
                 autofocus
               />
+            </div>
+            <div
+              *ngIf="form['loginId'].touched && form['loginId'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="form['loginId'].errors"> {{  "LOGIN.USERNAME" | translate}}</div>
+              <div *ngIf="form['loginId'].errors?.['minlength']">
+                {{  "LOGIN.MINLENGTH" | translate}}
+              </div>
             </div>
 
             <!-- Password input -->
@@ -37,14 +46,22 @@
                 placeholder="Enter Password"
               />
             </div>
+            <div
+            *ngIf="form['password'].touched && form['password'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="form['password'].errors"> {{  "LOGIN.PASSWORD" | translate}}</div>
+            <div *ngIf="form['password'].errors?.['minlength']">
+              {{  "LOGIN.PWD_MINLENGTH" | translate}}
+            </div>
+          </div>
 
-            <div *ngIf="isValidationError" class="text-danger">{{ "LOGIN.VALIDATION_MSG" | translate }}</div>
+            <div *ngIf="isValidationError" class="text-danger">
+              {{ "LOGIN.VALIDATION_MSG" | translate }}
+            </div>
 
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button
-                type="submit"
-                class="btn btn-primary btn-lg"
-              >
+              <button type="submit" class="btn btn-primary btn-lg">
                 <span>{{ "LOGIN.LOGIN_LABEL" | translate }}</span>
               </button>
             </div>

@@ -44,7 +44,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       },
       isolate: false
     }),
-    NoopAnimationsModule
+    NoopAnimationsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, TranslateStore],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route redirects to login
@@ -14,6 +15,7 @@ const routes: Routes = [
       ),
       canActivate: [AuthGuard]
   },
+  { path: "**", component: PageNotFoundComponent}
 ];
 
 @NgModule({

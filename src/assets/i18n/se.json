@@ -9,9 +9,13 @@
         "SESSION_EXPIRED": "Sessionen löpte! Logga in igen",
         "SERVER_ERROR": "Det går inte att ansluta till API-tjänsten",
         "VALIDATION_MSG":"Vänligen ange ett giltigt användarnamn eller lösenord",
-        "COPY_RIGHT": "Copyright © 2023. Alla rättigheter reserverade."
+        "COPY_RIGHT": "Copyright © 2023. Alla rättigheter reserverade.",
+        "MINLENGTH":"Användarnamn måste vara 4 tecken",
+        "USERNAME":"Ange användarnamn",
+        "PASSWORD": "Ange lösenord",
+        "PWD_MINLENGTH":"Lösenordet måste vara 6 tecken"
     },
     "USER": {
-        "USER_DATA":"User Data"
+        "USER_DATA":"Användardata"
     }
 }

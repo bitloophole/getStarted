@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { InprogressComponent } from './components/inprogress/inprogress.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    PageNotFoundComponent,
+    InprogressComponent
   ],
   imports: [
     CommonModule,
@@ -16,6 +20,6 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     RouterModule
   ],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent, PageNotFoundComponent, InprogressComponent]
 })
 export class SharedModule { }
