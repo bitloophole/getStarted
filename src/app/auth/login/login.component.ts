@@ -35,7 +35,7 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value).subscribe(
         (res) => {
           if (res.StatusText === 'SUCCESS') {
-            localStorage.setItem('currentUser', JSON.stringify(res));
+            sessionStorage.setItem('currentUser', JSON.stringify(res));
             this.router.navigate([
               '/dashboard',
             ]); /**Redirect on successful login */
@@ -44,7 +44,7 @@ export class LoginComponent {
           }
         },
         (err: any) => {
-          this.alertService.openSnackBarError(err.error.error);
+          this.alertService.openSnackBarError(err.error.StatusText);
         }
       );
     } else {

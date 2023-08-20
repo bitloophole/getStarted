@@ -1,0 +1,26 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <div
+        class="navbar-nav"
+        *ngFor="let menuItem of menuItems">
+        <a
+          class="side-menu__item active has__link" 
+          [ngStyle]="{color: menuItem.active ? 'red': ''}"
+          [routerLink]="!menuItem.type ? null : [menuItem.path]"
+          *ngIf="menuItem.type === 'link'"
+          routerLinkActive="active"
+          (click)="toggleNavActive(menuItem)"
+        >
+        <span class="side-menu__icon">
+          <i class="fe fe-{{ menuItem.icon }} "></i>
+        </span>
+          <span class="side-menu__icon">
+            <i class="fe fe-{{ menuItem.icon }} "></i>
+          </span>
+          <span class="side-menu__label">{{ menuItem.title }}</span>
+        </a>
+      </div>
+      </div>
+    </nav>
+  </div>

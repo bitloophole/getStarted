@@ -8,6 +8,7 @@
         "ERROR_PASSWORD": "Vänligen ange lösenord",
         "SESSION_EXPIRED": "Sessionen löpte! Logga in igen",
         "SERVER_ERROR": "Det går inte att ansluta till API-tjänsten",
-        "VALIDATION_MSG":"Vänligen ange ett giltigt användarnamn eller lösenord"
+        "VALIDATION_MSG":"Vänligen ange ett giltigt användarnamn eller lösenord",
+        "COPY_RIGHT": "Copyright © 2023. Alla rättigheter reserverade."
     }
 }

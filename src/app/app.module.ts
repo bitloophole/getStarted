@@ -9,9 +9,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { SquarePipe } from './shared/pipes/square.pipe';
 import { PowerPipe } from './shared/pipes/power.pipe';
 import { TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
-import { LocalizationModule } from './shared/Modules/localization/localization.module';
+import { LocalizationModule } from 'src/app/shared/modules/localization/localization.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { MaterialModule } from './shared/Modules/material/material.module';
+import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 

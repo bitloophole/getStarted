@@ -8,6 +8,7 @@
         "ERROR_PASSWORD": "Plese enter password",
         "SESSION_EXPIRED": "Session expired! Please sign in again",
         "SERVER_ERROR": "Unable to connect to API service",
-        "VALIDATION_MSG":"Please enter a valid username or password"
+        "VALIDATION_MSG":"Please enter a valid username or password",
+        "COPY_RIGHT": "Copyright © 2023. All rights reserved."
     }
 }
