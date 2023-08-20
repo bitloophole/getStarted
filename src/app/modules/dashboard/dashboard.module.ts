@@ -7,10 +7,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { UserComponent } from './user/user.component';
 import { ReportComponent } from './report/report.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ExpenseComponent } from './expense/expense.component';
+import { ExpenseListComponent } from './expense/expense-list/expense-list.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, UserComponent, ReportComponent],
+  declarations: [DashboardComponent, UserComponent, ReportComponent, ExpenseComponent, ExpenseListComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

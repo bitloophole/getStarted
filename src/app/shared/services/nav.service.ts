@@ -1,21 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-export interface Menu {
-  headTitle?: string;
-  path: string;
-  title: string;
-  icon: string;
-  type: string;
-  active: boolean;
-  selected: boolean;
-}
+import { Menu } from '../data/interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavService {
-
   MENUITEMS: Menu[] = [
     {
       title: 'Home',

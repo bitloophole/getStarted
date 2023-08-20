@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="main-body">
+    <div class="row gutters-sm m-0 pt-3 mt-3">
+      <div class="col-md-6 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="flex-column align-items-center text-center">
+              <div>
+                <form>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="category">Category &nbsp;</label>
+                    <input type="text" #category placeholder="Category" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="location">Loaction &nbsp;</label>
+                    <input type="text" #location placeholder="Loaction" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="amount">Amount &nbsp;</label>
+                    <input type="number" #amount placeholder="Amount" />
+                  </div>
+                  <button class="btn btn-secondary" type="button"
+                    (click)="
+                      addToList(category.value, location.value, amount.value)
+                    "
+                  >
+                    Add here
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="flex-column align-items-center text-center">
+              Angular Input and output example
+              <app-expense-list
+                [tableData]="expenseList"
+                (onRowClickEvent)="removeRow($event)"
+              ></app-expense-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
