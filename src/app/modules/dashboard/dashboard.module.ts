@@ -6,8 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UserComponent } from './user/user.component';
 import { ReportComponent } from './report/report.component';
-import { HighchartsChartComponent } from 'highcharts-angular';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 @NgModule({
   declarations: [DashboardComponent, UserComponent, ReportComponent],
