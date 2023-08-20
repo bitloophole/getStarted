@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard.component';
 import { UserComponent } from './user/user.component';
 import { ReportComponent } from './report/report.component';
 import { PageNotFoundComponent } from 'src/app/shared/components/page-not-found/page-not-found.component';
-import { InprogressComponent } from 'src/app/shared/components/inprogress/inprogress.component';
 import { ExpenseComponent } from './expense/expense.component';
 
 const routes: Routes = [
@@ -14,7 +13,7 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-      { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
+      { path: '', redirectTo: '/dashboard/profile', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'user', component: UserComponent },

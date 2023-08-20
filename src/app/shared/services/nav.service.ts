@@ -8,12 +8,12 @@ import { Menu } from '../data/interface';
 export class NavService {
   MENUITEMS: Menu[] = [
     {
-      title: 'Home',
-      selected: true,
-      active: true,
-      icon: 'home',
+      title: 'Profile',
+      selected: false,
+      icon: 'bi bi-people',
       type: 'link',
-      path: '/dashboard/home',
+      path: '/dashboard/profile',
+      active: false,
     },
     {
       title: 'Users',
@@ -22,22 +22,6 @@ export class NavService {
       type: 'link',
       active: false,
       path: '/dashboard/user',
-    },
-    {
-      title: 'Reports',
-      selected: false,
-      icon: 'bi bi-file-earmark-text',
-      type: 'link',
-      active: false,
-      path: '/dashboard/report',
-    },
-    {
-      title: 'Profile',
-      selected: false,
-      icon: 'bi bi-people',
-      type: 'link',
-      path: '/dashboard/profile',
-      active: false,
     },
     {
       title: 'Expenses',
