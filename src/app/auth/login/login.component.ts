@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { TranslationService } from 'src/app/shared/services/translation.service';
@@ -10,7 +10,7 @@ import { AlertService } from 'src/app/shared/services/alert.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isValidationError: boolean = false;
 

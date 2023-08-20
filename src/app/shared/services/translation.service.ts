@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class TranslationService {
   constructor(private translate: TranslateService) {}
 
-  getTraslatedValue(key: any) {
+  getTraslatedValue(key: string) {
       return this.translate.instant(key);
   }
 

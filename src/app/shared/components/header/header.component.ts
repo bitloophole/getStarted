@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavService } from '../../services/nav.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { NavService } from '../../services/nav.service';
 })
 export class HeaderComponent {
 
-  constructor(private navService: NavService) {}
+  constructor(private navService: NavService, private authservice: AuthService) {}
   menuItems = this.navService.MENUITEMS;
 
   // Toggle menu
@@ -25,5 +26,9 @@ export class HeaderComponent {
       });
     }
     item.active = !item.active;
+  }
+
+  logout() {
+    this.authservice.logout();
   }
 }

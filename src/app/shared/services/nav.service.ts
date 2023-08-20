@@ -15,7 +15,6 @@ export interface Menu {
   providedIn: 'root',
 })
 export class NavService {
-  constructor() {}
 
   MENUITEMS: Menu[] = [
     {
@@ -40,7 +39,7 @@ export class NavService {
       icon: 'bi bi-person',
       type: 'link',
       active: false,
-      path: '/pages/listofusers',
+      path: '/dashboard/user',
     },
     {
       title: 'Expenses',
@@ -48,7 +47,7 @@ export class NavService {
       icon: 'bi bi-cash',
       type: 'link',
       active: false,
-      path: '/dashboard/profile',
+      path: '/dashboard/expense',
     },
     {
       title: 'Reports',
@@ -56,7 +55,15 @@ export class NavService {
       icon: 'bi bi-file-earmark-text',
       type: 'link',
       active: false,
-      path: '/dashboard/profile',
+      path: '/dashboard/report',
+    },
+    {
+      title: 'Sign Out',
+      selected: false,
+      icon: 'bi bi-file-earmark-text',
+      type: 'link',
+      active: false,
+      path: '/login',
     },
   ];
 

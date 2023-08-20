@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
-import { empty, Observable, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -13,7 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // Get the auth token from the service.
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+        this.currentUser = JSON.parse(sessionStorage.getItem('currentUser') as string);
         if (req.url.indexOf('/api/login') > -1 || req.url.indexOf('/assets/') > -1) {
             return next.handle(req);
         }
@@ -31,7 +31,7 @@ export class AuthInterceptor implements HttpInterceptor {
         return next.handle(this.authReq).pipe(
             catchError((error: HttpErrorResponse) => {
                 if (error.status === 498 || error.status === 401) {
-                    localStorage.removeItem('currentUser');
+                    sessionStorage.removeItem('currentUser');
                     if (this.router.url !== '/auth/login') {
                         alert('Please login again')
                     }

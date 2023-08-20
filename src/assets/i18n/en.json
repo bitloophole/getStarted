@@ -10,5 +10,8 @@
         "SERVER_ERROR": "Unable to connect to API service",
         "VALIDATION_MSG":"Please enter a valid username or password",
         "COPY_RIGHT": "Copyright © 2023. All rights reserved."
+    },
+    "USER": {
+        "USER_DATA":"User Data"
     }
 }

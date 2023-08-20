@@ -1,0 +1,42 @@
+<div class="row gutters-sm m-0 pt-3">
+  <div class="col-md-12 mb-3">
+    <h2>User Data</h2>
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-column align-items-center text-center">
+          <div class="col-md-12">
+            <ngx-datatable
+              class="material"
+              [rows]="dataTable"
+              columnMode="force"
+              [headerHeight]="40"
+              [footerHeight]="50"
+              [rowHeight]="50"
+              [scrollbarV]="true"
+              [scrollbarH]="true"
+            >
+              <ngx-datatable-column name="Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <div class="link-primary">{{ row.address.city }}</div>
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Phone"></ngx-datatable-column>
+              <ngx-datatable-column name="Username"></ngx-datatable-column>
+              <ngx-datatable-column name="Website"></ngx-datatable-column>
+              <ngx-datatable-column name="Company Name">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.company.name }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="City">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.address.city }}
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

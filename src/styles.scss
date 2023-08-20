@@ -26,3 +26,16 @@ body {
   margin-left: 0px;
   margin-right: 0px;
 }
+
+::-webkit-scrollbar-thumb {
+  background-color: #cacaca;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: #373e4a;
+  cursor: pointer;
+}
