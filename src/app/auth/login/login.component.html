@@ -10,6 +10,9 @@
           />
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <h3>{{
+            "LOGIN.WELCOME" | translate
+          }}</h3>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
             <!-- User name input -->
             <div class="form-outline mb-4">
@@ -29,9 +32,6 @@
               class="alert alert-danger"
             >
               <div *ngIf="form['loginId'].errors"> {{  "LOGIN.USERNAME" | translate}}</div>
-              <div *ngIf="form['loginId'].errors?.['minlength']">
-                {{  "LOGIN.MINLENGTH" | translate}}
-              </div>
             </div>
 
             <!-- Password input -->
@@ -51,9 +51,6 @@
             class="alert alert-danger"
           >
             <div *ngIf="form['password'].errors"> {{  "LOGIN.PASSWORD" | translate}}</div>
-            <div *ngIf="form['password'].errors?.['minlength']">
-              {{  "LOGIN.PWD_MINLENGTH" | translate}}
-            </div>
           </div>
 
             <div *ngIf="isValidationError" class="text-danger">

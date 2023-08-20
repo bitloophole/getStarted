@@ -1,6 +1,6 @@
 {
     "LOGIN": {
-        "LOGIN_TITLE": "World's No 1 Cognitive Platform",
+        "WELCOME": "Welcome User!",
         "LOGIN_LABEL": "Login",
         "USERNAME_LABEL": "Username",
         "PASSWORD_LABEL": "Password",
