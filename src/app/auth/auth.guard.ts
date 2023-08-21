@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
       const currentUser: any = sessionStorage.getItem('currentUser');
       if (currentUser) {
         const userInfo = JSON.parse(currentUser);
-        // if (route.data && (route.data !== userInfo.userRole)) {
+        // if (route.data && (route.data !== userInfo.userRole)) {  //Provide the senario to validate canactivate
         //   this.router.navigate(['/']);
         //   return false;
         // }

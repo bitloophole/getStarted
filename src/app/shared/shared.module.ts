@@ -6,20 +6,9 @@ import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { InprogressComponent } from './components/inprogress/inprogress.component';
 
-
-
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    PageNotFoundComponent,
-    InprogressComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule
-  ],
-  exports: [HeaderComponent, PageNotFoundComponent, InprogressComponent]
+  declarations: [HeaderComponent, PageNotFoundComponent, InprogressComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  exports: [HeaderComponent, PageNotFoundComponent, InprogressComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

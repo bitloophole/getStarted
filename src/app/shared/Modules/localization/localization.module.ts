@@ -10,15 +10,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class LocalizationModule { 
+
+export class LocalizationModule {
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'se']);
     translate.setDefaultLang('en');
-    //translate.use('se')  /** To see translation in swedish language */ 
+    //translate.use('se')  /** To see translation in swedish language */
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|se/) ? browserLang : 'en');
   }

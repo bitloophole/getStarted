@@ -10,6 +10,7 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
+  /**Fetching the user data from fake API */
   getUserDataService(): Observable<any> {
     const url = endpointList.userDataList;
     return this.http.get(url).pipe(catchError(error => {

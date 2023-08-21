@@ -11,6 +11,7 @@ import { AlertService } from 'src/app/shared/services/alert.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+
   loginForm!: FormGroup;
   isValidationError: boolean = false;
 
@@ -23,6 +24,11 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.createLoginForm();
+  }
+
+  /**Login form group */
+  createLoginForm() {
     this.loginForm = this.formBuilder.group({
       loginId: ['', Validators.required],
       password: ['', Validators.required],
@@ -33,6 +39,7 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
+  /**On submit of the form */
   onSubmit(): void {
     this.isValidationError = false;
     if (this.loginForm.valid) {

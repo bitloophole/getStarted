@@ -1,6 +1,21 @@
 # GetStarted
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Constructed using Angular 15, this web application showcases a selection of Angular's capabilities. To access the application, users can provide the username 'something@gmail.com' and the password '123456' during the login process. Once logged in, several components come into play, including Profile, User, Expenses, and Signout.
+
+In the User component, the implementation incorporates ngx-datatable for enhanced functionality. The Expenses component employs parent-child communication for transferring conceptual data between components.
+
+## Concepts
+
+- Authentication is possible using the email 'something@gmail.com' and the password '123456' for login.
+- Input validation and form submission within the login form are managed through Reactive Forms.
+- The application employs lazy loading, enabling activation exclusively for the dashboard module when necessary.
+- Data communication within expenses components is facilitated by utilizing the Input and Output decorators.
+- The Auth Interceptor is responsible for appending a JWT token to every API call once a user is logged in.
+
+### Prerequisites
+
+- Node.js and npm must be installed on your machine.
+- Angular CLI must be installed globally.
 
 ## Development server
 

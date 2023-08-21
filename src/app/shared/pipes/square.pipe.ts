@@ -1,12 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'square'
+  name: 'square',
 })
-export class SquarePipe implements PipeTransform {
 
+export class SquarePipe implements PipeTransform {
   transform(value: number): number {
     return value * value;
   }
-
 }

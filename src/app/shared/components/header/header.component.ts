@@ -5,11 +5,13 @@ import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-
-  constructor(private navService: NavService, private authservice: AuthService) {}
+  constructor(
+    private navService: NavService,
+    private authservice: AuthService
+  ) {}
   menuItems = this.navService.MENUITEMS;
 
   // Toggle menu

@@ -12,28 +12,30 @@ export class AuthInterceptor implements HttpInterceptor {
     constructor(private auth: AuthService, private router: Router) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // Get the auth token from the service.
+        /**Get the auth token from the service. */
         this.currentUser = JSON.parse(sessionStorage.getItem('currentUser') as string);
-        if (req.url.indexOf('/api/login') > -1 || req.url.indexOf('/assets/') > -1) {
+        if (req.url.indexOf('/api/login') > -1 || req.url.indexOf('/assets/') > -1) {  
             return next.handle(req);
         }
+        
         if (this.currentUser === null) {
             this.router.navigate(['/auth/login']);
-
         }
+
         this.authReq = req.clone({
             setHeaders: {
-                Authorization: 'Bearer ' + this.currentUser.token,
+                Authorization: 'Bearer ' + this.currentUser.token, //appending JWT token
                 "Content-Type": "application/json"
             }
         });
 
+        /**Route to login page if error */
         return next.handle(this.authReq).pipe(
             catchError((error: HttpErrorResponse) => {
                 if (error.status === 498 || error.status === 401) {
                     sessionStorage.removeItem('currentUser');
                     if (this.router.url !== '/auth/login') {
-                        alert('Please login again')
+                        console.log('Please login again')
                     }
                     this.router.navigate(['/auth/login']);
                 }
